@@ -1,0 +1,38 @@
+<mat-card>
+
+    <form  [formGroup]="formGroup">
+        <div class="question-container">
+            <mat-form-field appearance="fill" class="title">
+                <input matInput placeholder="Question" formControlName='questionPrompt'>
+            </mat-form-field>
+    
+            <mat-form-field appearance="fill" class="type">
+                <mat-label>Type of Question</mat-label>
+                <mat-select formControlName="questionType" (selectionChange)="onSelectionChange($event.value)">
+                    <mat-option *ngFor="let option of options" [value]="option.name">
+                            {{option.description}} 
+                    </mat-option>
+                    
+                
+                </mat-select>
+            </mat-form-field>
+
+            
+        </div>
+        <ng-template appQuestion></ng-template>
+        <div>
+            <mat-divider [inset]="true"></mat-divider>
+            <div class="form-actions">
+                <button mat-icon-button (click)="deleteQuestion()"><mat-icon>delete_outline</mat-icon></button>
+
+                <mat-slide-toggle formControlName="required">Required</mat-slide-toggle>
+            </div>
+        </div>
+       
+    </form>
+
+
+
+
+
+</mat-card>
