@@ -3,12 +3,12 @@
     <form  [formGroup]="formGroup">
         <div class="question-container">
             <mat-form-field appearance="fill" class="title">
-                <input matInput placeholder="Question" formControlName='questionPrompt'>
+                <input matInput placeholder="Question" formControlName='prompt'>
             </mat-form-field>
     
             <mat-form-field appearance="fill" class="type">
                 <mat-label>Type of Question</mat-label>
-                <mat-select formControlName="questionType" (selectionChange)="onSelectionChange($event.value)">
+                <mat-select formControlName="type" (selectionChange)="onSelectionChange($event.value)">
                     <mat-option *ngFor="let option of options" [value]="option.name">
                             {{option.description}} 
                     </mat-option>

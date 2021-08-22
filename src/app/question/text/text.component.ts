@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-text',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TextComponent implements OnInit {
 
-  constructor() { }
+   formGroup: FormGroup;
+  constructor(private _fb: FormBuilder) {
+    this.formGroup = _fb.group({
+      title: ['', [Validators.required]]
+    });
+   }
 
   ngOnInit(): void {
   }

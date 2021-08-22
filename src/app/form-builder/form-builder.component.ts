@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ComponentFactoryResolver, ComponentRef, OnInit, ViewContainerRef } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { AnonymousSubject } from 'rxjs/internal/Subject';
 import { AddQuestionComponent } from '../question/add-question/add-question.component';
 import { TextFieldUnion } from '../types/form-field.type';
@@ -51,17 +52,18 @@ export class FormBuilderComponent implements OnInit, AfterViewInit {
     
   ]
   component: any;
-  constructor(private _factoryResolver: ComponentFactoryResolver, private _viewContainerRef: ViewContainerRef) { }
+  constructor(private _factoryResolver: ComponentFactoryResolver, private _viewContainerRef: ViewContainerRef) { 
+  }
   ngAfterViewInit(): void {
-    // this.component.instance.output.subscribe((val: any) => {
-    //   console.log("hello world", val);
-    //  })
+ 
   }
 
   ngOnInit(): void {
     const componentFactory = this._factoryResolver.resolveComponentFactory(AddQuestionComponent);
      this.component = this._viewContainerRef.createComponent<AddQuestionComponent>(componentFactory);
+     
 
+     
      
   
 
