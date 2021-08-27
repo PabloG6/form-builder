@@ -1,3 +1,39 @@
-<button mat-raised-button color="primary" (click)="onSubmit()">Create Form</button>
+<mat-toolbar>
+    <mat-toolbar-row>
+        <span>Untitled Form</span>
+        <span class="example-spacer"></span>
+        <button mat-flat-button color="primary" (click)="onSubmit()">Send</button>
+    </mat-toolbar-row>
 
-<button mat-mini-fab (click)='addQuestionComponent()'><mat-icon>add</mat-icon></button>
+    <mat-toolbar-row></mat-toolbar-row>
+
+</mat-toolbar>
+
+<div class="question-container">
+
+<div></div>
+<div>
+    <div #questionContainer>
+    
+    </div>
+
+</div>
+  
+
+<div class="action-container mat-elevation-z1">
+    <button mat-icon-button (click)='addQuestionComponent()'matTooltipPosition='right'matTooltip='Add a question' ><mat-icon>add_circle_outline</mat-icon></button>
+    <button mat-icon-button (click)='addQuestionComponent()'><mat-icon class="material-icons-outlined" matTooltip='Add a webhook link' matTooltipPosition='right'>add_link</mat-icon></button>
+    <button mat-icon-button (click)='onSubmit()'><mat-icon class="material-icons-outlined" matTooltip='Publish Form' matTooltipPosition='right'> publish</mat-icon></button>
+    <button mat-icon-button (click)='addQuestionComponent()'><mat-icon class="material-icons-outlined" matTooltip='Send Form' matTooltipPosition='right'>send</mat-icon></button>
+    <button mat-icon-button (click)='addQuestionComponent()'><mat-icon class="material-icons-outlined" matTooltip='Share link' matTooltipPosition='right'>share</mat-icon></button>
+
+</div>
+<div></div>
+    
+
+
+</div>
+
+    
+
+

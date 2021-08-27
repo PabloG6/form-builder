@@ -1,0 +1,24 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.question-container {
+    display: grid;
+    grid-template-columns: 2fr 8fr 2fr 1fr;
+}
+.action-container {
+  position: -webkit-sticky;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  top: 32px;
+  max-height: 220px;
+  justify-content: center;
+  align-items: center;
+  right: 32px;
+  border-radius: 4px;
+  width: 48px;
+  -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
