@@ -12,13 +12,13 @@ export class FormComponent implements OnInit {
 
   inputs: TextFieldUnion[] = [
     {
-      type: "text",
+      type: "shortAnswer",
       prompt: 'What is your name?',
       appearance: "fill",
       
     },
     {
-      type: "text",
+      type: "shortAnswer",
       prompt: 'Where are you from?',
       appearance: "outline"
     },
@@ -50,7 +50,13 @@ export class FormComponent implements OnInit {
     }
     
   ]
-  constructor() { }
+  constructor(private _apiService: ApiService, private _activatedRoute: ActivatedRoute) { 
+    //do something about this
+    const id = this._activatedRoute.snapshot.paramMap.get('id')
+    this._apiService.getForm('a6321f78-8f63-46f7-a53b-3d2aa066ae6b').subscribe((response) => {
+      console.log(response);
+    })
+  }
 
   ngOnInit(): void {
   }
