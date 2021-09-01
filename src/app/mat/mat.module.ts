@@ -13,9 +13,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatGridListModule} from '@angular/material/grid-list';
 import { QuestionModule } from '../question/question.module';
-
-
+import {MatTableModule} from '@angular/material/table';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatStepper, MatStepperModule} from '@angular/material/stepper';
 
 @NgModule({
   declarations: [],
@@ -29,26 +32,36 @@ import { QuestionModule } from '../question/question.module';
     MatCheckboxModule,
     MatInputModule,
     MatToolbarModule,
+    MatStepperModule,
     MatIconModule,
     QuestionModule,
     MatButtonModule,
+    MatTableModule,
     MatTooltipModule,
+    MatSidenavModule,
     MatSelectModule,
+    MatListModule,
+    MatGridListModule,
     MatFormFieldModule,
   ],
    exports: [
     MatRadioModule,
+    MatStepperModule,
     MatDatepickerModule,
     MatCardModule,
     MatDividerModule,
+    MatListModule,
     MatSlideToggleModule,
+    MatSidenavModule,
     MatCheckboxModule,
     MatInputModule,
     MatToolbarModule,
     MatIconModule,
+    MatGridListModule,
     QuestionModule,
     MatButtonModule,
     MatTooltipModule,
+MatTableModule,
     MatSelectModule,
     MatFormFieldModule,
    ]
