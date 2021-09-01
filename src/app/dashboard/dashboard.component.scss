@@ -1,0 +1,134 @@
+:host {
+  height: 100%;
+}
+
+
+.form-selector {
+  width: 48px;
+  height: 72px;
+}
+
+.mat-raised-button {
+    padding: 4px 20px;
+    font-size: 16px;
+    border-radius: 2px;
+
+}
+
+mat-sidenav {
+  width: 230px;
+  padding-top: 24px;
+}
+
+mat-sidenav-container {
+  height: 100%;
+}
+
+mat-sidenav-content {
+  width: 100%;
+  margin-left: 240px;
+  display: flex;
+  
+}
+
+.nav-divider {
+    margin-top: 16px;
+    width: 100%;
+    
+}
+
+.action-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+
+}
+.description-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidenav-content-container {
+  width: 720px;
+  height: 500px;
+  margin-right: 240px;
+  border-radius: 4px;
+  
+}
+
+div.mat-subheading-1 {
+    margin: 0 0  8px
+}
+div.mat-caption {
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: 500;
+}
+span.mat-caption {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.dashboard-container {
+  max-width: 650px;
+}
+
+.form-card {
+  height: 220px;
+  border-radius: 8px;
+  padding: 0;
+
+
+}
+mat-toolbar {
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.form-title {
+  background-color:rgba(0, 0, 0, 0.2);
+  height: 180px;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 16px;
+  
+  border-radius: 12px 12px 0 0;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+
+  
+  align-items: center;
+}
+
+
+.display-grid {
+  display: grid;
+  column-gap: 12px;
+  margin-top: 16px;
+  row-gap: 8px;
+  
+  grid-template-columns: 200px 200px 200px;
+
+}
