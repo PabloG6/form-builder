@@ -1,1 +1,23 @@
-<p>signup works!</p>
+<mat-card>
+  <form [formGroup]="formGroup">
+    <h3 class="mat-display-1">This is a call to action.</h3>
+    <p class="mat-body-1">This is definitely meant to be a minor description</p>
+    <div class="form-field">
+      <p>Email</p>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="example@email.com"  formControlName='email'/>
+      </mat-form-field>
+    </div>
+
+    <div class="form-field">
+      <p>Password</p>
+      <mat-form-field appearance="outline" >
+        <input matInput type="password" formControlName='password' />
+      </mat-form-field>
+    </div>
+  </form>
+
+  <button mat-flat-button color="primary" id="signup" (click)="signUp()">
+    Create your account
+  </button>
+</mat-card>
