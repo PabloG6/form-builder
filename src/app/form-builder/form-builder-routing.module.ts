@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormBuilderComponent } from './form-builder.component';
 import { CreateFormComponent } from '../create-form/create-form.component';
 import { FormComponent } from '../form/form.component';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -13,9 +14,14 @@ const routes: Routes = [
     component: CreateFormComponent,
   },
   {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
     path: ':id',
     component: FormComponent
-  }
+  },
+  
 ]
 
 @NgModule({

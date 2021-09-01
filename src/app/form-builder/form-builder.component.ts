@@ -13,13 +13,13 @@ export class FormBuilderComponent implements OnInit, AfterViewInit {
 
   inputs: TextFieldUnion[] = [
     {
-      type: "text",
+      type: "shortAnswer",
       prompt: 'What is your name?',
       appearance: "fill",
       
     },
     {
-      type: "text",
+      type: "shortAnswer",
       prompt: 'Where are you from?',
       appearance: "outline"
     },
