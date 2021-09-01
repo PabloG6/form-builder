@@ -41,21 +41,29 @@ export class CreateFormComponent implements OnInit, OnDestroy {
   constructor(private _fb: FormBuilder, private _viewContainerRef: ViewContainerRef, 
     private _factoryResolver: ComponentFactoryResolver, private _apiService: ApiService) { 
     this.formGroup = this._fb.group({
-      formTitle: ['', Validators.required],
+      formInfo: this._fb.group({
+        title: ['', [Validators.required]],
+        description: ['', [Validators.required]],
+        webhook: ['', [Validators.required]]
+      }),
       questions: new FormArray([])
     })
    
 
     
   }
+  
+  
   ngOnDestroy(): void {
     this.subsink.unsubscribe();
   }
   
 
   ngOnInit(): void {
-   
+    this.addQuestionComponent();
+
   }
+
 
 
 
@@ -63,16 +71,12 @@ export class CreateFormComponent implements OnInit, OnDestroy {
   onSubmit() {
     const questionsFormArray:any[]= [];
     console.log(this.questionsComponentArray);
-    this.questionsComponentArray.forEach(componentRef => {
-       const value =  componentRef.instance.value;
-     
-      questionsFormArray.push(value);
-
-       
-    })
+    console.log(this.formGroup);
+    
+  
 
     console.log(questionsFormArray)
-    this._apiService.submitForm(questionsFormArray).subscribe((response: any) => {
+    this._apiService.submitForm({...this.formGroup.value.formInfo, questions: this.formGroup.value.questions}).subscribe((response: any) => {
       console.log('form created', response);
     })
 
@@ -84,6 +88,8 @@ export class CreateFormComponent implements OnInit, OnDestroy {
   
     const componentFactory = this._factoryResolver.resolveComponentFactory(AddQuestionComponent);
     const component = this.questionContainerRef.createComponent(componentFactory);
+    this.questionsFormArray.push(component.instance.formGroup);
+    console.log(this.questionsFormArray);
     this.subsink.sink = component.instance.onDelete.subscribe((instance) => {
       const component = this.questionsComponentArray.find(component => component.instance === instance);
       this.questionsComponentArray = this.questionsComponentArray.filter(component => component.instance !== instance)
@@ -96,7 +102,8 @@ export class CreateFormComponent implements OnInit, OnDestroy {
       this.questionContainerRef.detach(index);
       console.log(this.questionsComponentArray);
       console.log(this.questionsFormArray);
-      this.questionsFormArray.removeAt(index);
+      this.questionsFormArray.removeAt(index, {emitEvent: true});
+     console.log(this.questionsFormArray);
 
 
     }, () => {
@@ -110,9 +117,13 @@ export class CreateFormComponent implements OnInit, OnDestroy {
 
 
   get questionsFormArray(): FormArray {
+    console.log('formGroup: ', this.formGroup);
     return this.formGroup.get('questions') as FormArray;
   }
 
+  get formInfo(): FormGroup {
+    return this.formGroup.get('formInfo') as FormGroup;
+  }
  
   changeQuestion($event: any, index: number) {
     const questionComponent = this.questionsComponentArray[index];

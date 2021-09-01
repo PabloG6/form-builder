@@ -1,39 +1,86 @@
-<mat-toolbar>
-    <mat-toolbar-row>
-        <span>Untitled Form</span>
-        <span class="example-spacer"></span>
-        <button mat-flat-button color="primary" (click)="onSubmit()">Send</button>
-    </mat-toolbar-row>
+<mat-toolbar></mat-toolbar>
 
-    <mat-toolbar-row></mat-toolbar-row>
+<mat-stepper class="stepper" labelPosition="bottom" #stepper>
+  <mat-step [stepControl]="questionsFormArray">
+    <div class="question-container">
+      <div class="question-content-container">
+        <div #questionContainer></div>
+      </div>
 
-</mat-toolbar>
-
-<div class="question-container">
-
-<div></div>
-<div>
-    <div #questionContainer>
-    
+      <div class="action-container mat-elevation-z1">
+        <button
+          mat-icon-button
+          (click)="addQuestionComponent()"
+          matTooltipPosition="right"
+          matTooltip="Add a question"
+        >
+          <mat-icon>add_circle_outline</mat-icon>
+        </button>
+        <button mat-icon-button (click)="addQuestionComponent()">
+          <mat-icon
+            class="material-icons-outlined"
+            matTooltip="Add a webhook link"
+            matTooltipPosition="right"
+            >add_link</mat-icon
+          >
+        </button>
+        <button mat-icon-button (click)="onSubmit()">
+          <mat-icon
+            class="material-icons-outlined"
+            matTooltip="Publish Form"
+            matTooltipPosition="right"
+          >
+            publish</mat-icon
+          >
+        </button>
+        <button mat-icon-button (click)="addQuestionComponent()">
+          <mat-icon
+            class="material-icons-outlined"
+            matTooltip="Send Form"
+            matTooltipPosition="right"
+            >send</mat-icon
+          >
+        </button>
+        <button mat-icon-button (click)="addQuestionComponent()">
+          <mat-icon
+            class="material-icons-outlined"
+            matTooltip="Share link"
+            matTooltipPosition="right"
+            >share</mat-icon>
+        </button>
+      </div>
     </div>
-
-</div>
-  
-
-<div class="action-container mat-elevation-z1">
-    <button mat-icon-button (click)='addQuestionComponent()'matTooltipPosition='right'matTooltip='Add a question' ><mat-icon>add_circle_outline</mat-icon></button>
-    <button mat-icon-button (click)='addQuestionComponent()'><mat-icon class="material-icons-outlined" matTooltip='Add a webhook link' matTooltipPosition='right'>add_link</mat-icon></button>
-    <button mat-icon-button (click)='onSubmit()'><mat-icon class="material-icons-outlined" matTooltip='Publish Form' matTooltipPosition='right'> publish</mat-icon></button>
-    <button mat-icon-button (click)='addQuestionComponent()'><mat-icon class="material-icons-outlined" matTooltip='Send Form' matTooltipPosition='right'>send</mat-icon></button>
-    <button mat-icon-button (click)='addQuestionComponent()'><mat-icon class="material-icons-outlined" matTooltip='Share link' matTooltipPosition='right'>share</mat-icon></button>
-
-</div>
-<div></div>
+    <button mat-button matStepperNext>Next</button>
+  </mat-step>
+  <mat-step class="center">
+      <div class="mat-display-1">Form Information</div>
+    <form [formGroup]="formInfo" class="center">
     
+      <mat-card class="question-card">
+          <div class="mat-subheading-2">Title. (Required)</div>
+          <mat-form-field appearance="fill" style="width: 100%">
+              <input matInput formControlName="title" placeholder="E.g. Student Form Registration 2021">
+          </mat-form-field>
+     </mat-card>
 
+     <mat-card class="question-card">
+        <div class="mat-subheading-2">Description. (Optional)</div>
+        <mat-form-field appearance="fill" style="width: 100%">
+            <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
 
-</div>
-
-    
-
-
+       
+   </mat-card>
+   <mat-card class="question-card">
+    <div class="mat-subheading-2">Web Hook Link. (Required)</div>
+    <mat-form-field appearance="fill" style="width: 100%">
+        <input matInput formControlName="webhook">
+    </mat-form-field>
+    </mat-card>
+    </form>
+    <div class="stepper-holder">
+      <button mat-stroked-button matStepperPrevious>Previous</button>
+      <button mat-flat-button matStepperNext color="primary" [disabled]="formInfo.invalid" (click)="onSubmit()">Done</button>
+    </div>
+  </mat-step>
+</mat-stepper>

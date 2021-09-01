@@ -28,7 +28,7 @@ export class FormDirective implements OnInit {
         
         break;
       }
-      case 'text': {
+      case 'shortAnswer': {
         const component = this.generateComponent<MatInputWrapperComponent>(MatInputWrapperComponent)
         component.instance.appearance = this.input.appearance;
         component.instance.prompt = this.input.prompt;

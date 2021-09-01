@@ -63,7 +63,7 @@ export class AddQuestionComponent implements OnInit, AfterViewInit {
   get currentDirective(): any {
     return this._currentDirective;
   }
-  onSelectionChange(value: 'radio' | 'select' | 'text' | 'date') {
+  onSelectionChange(value: QuestionType) {
     
    
     this.component = this.questionDirective.setQuestion(value)
