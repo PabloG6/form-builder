@@ -2,6 +2,7 @@ import { TextFieldModule } from "@angular/cdk/text-field";
 import { MatFormFieldAppearance, MatFormFieldModule } from "@angular/material/form-field";
 
 export type TAppearance = 'fill' | 'outline' | 'legacy';
+export type QuestionType = 'radio' | 'select' | 'shortAnswer' | 'paragraph' | 'date' | 'number';
 export type TRadio = {
     type: 'radio';
     prompt: string;
@@ -44,7 +45,7 @@ export type TextField = {
     label?: string;
     
     prompt: string;
-    type: 'text';
+    type: 'shortAnswer';
     required?: boolean;
     appearance?: MatFormFieldAppearance
 

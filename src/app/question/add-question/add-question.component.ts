@@ -5,6 +5,7 @@ import { QuestionDirective } from '../question.directive';
 import {v4 as uuidv4} from 'uuid';
 import { RadioComponent } from '../radio/radio.component';
 import { TextComponent } from '../text/text.component';
+import { QuestionType } from 'src/app/types/form-field.type';
 
 @Component({
   selector: 'app-add-question',
@@ -50,7 +51,7 @@ export class AddQuestionComponent implements OnInit, AfterViewInit {
 
   }
   ngAfterViewInit(): void {
-    this.component = this.questionDirective.setQuestion('text');
+    this.component = this.questionDirective.setQuestion('shortAnswer');
     this._cdr.detectChanges();
 
   }
