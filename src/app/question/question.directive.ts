@@ -1,4 +1,5 @@
 import { Component, ComponentFactoryResolver, ComponentRef, Directive, Type, ViewContainerRef } from '@angular/core';
+import { QuestionType } from '../types/form-field.type';
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { RadioComponent } from './radio/radio.component';
 import { TextComponent } from './text/text.component';
@@ -21,7 +22,7 @@ export class QuestionDirective {
     return this.currentDirective;
   }
  
-  public setQuestion(type: 'radio' | 'select' | 'text' | 'number' | 'date'): ComponentRef<any> {
+  public setQuestion(type: QuestionType): ComponentRef<any> {
     switch(type) {
 
       case 'radio': {
@@ -40,7 +41,7 @@ export class QuestionDirective {
     
       }
 
-      case 'text': {
+      case 'shortAnswer': {
       
        return this.generateComponent<TextComponent>(TextComponent);
        

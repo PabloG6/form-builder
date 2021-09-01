@@ -6,7 +6,6 @@ export class DuplicateStateMatcher implements ErrorStateMatcher {
 
         const formGroup = form.form;
         const isDuplicate: boolean = formGroup.getError('duplicate');
-        console.log('isDuplicate', isDuplicate);
         return isDuplicate;
      
     }
