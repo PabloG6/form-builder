@@ -5,6 +5,7 @@
   "projects": {
     "form-builder": {
       "projectType": "application",
+      
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
@@ -17,8 +18,10 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+        
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
+        
           "options": {
             "outputPath": "dist/form-builder",
             "index": "src/index.html",
@@ -30,13 +33,19 @@
               "src/favicon.ico",
               "src/assets"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/"
+              ]
+            },
             "styles": [
               "src/styles.scss"
             ],
             "scripts": []
           },
+          
           "configurations": {
-            "production": {
+            "production":{
               "budgets": [
                 {
                   "type": "initial",
@@ -70,6 +79,7 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          
           "configurations": {
             "production": {
               "browserTarget": "form-builder:build:production"
