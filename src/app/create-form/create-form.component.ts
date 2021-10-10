@@ -76,6 +76,7 @@ export class CreateFormComponent implements OnInit, OnDestroy {
   
 
     console.log(questionsFormArray)
+    console.log(this.formGroup.value.formInfo);
     this._apiService.submitForm({...this.formGroup.value.formInfo, questions: this.formGroup.value.questions}).subscribe((response: any) => {
       console.log('form created', response);
     })

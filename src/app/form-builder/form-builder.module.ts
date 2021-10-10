@@ -15,7 +15,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import { FormComponent } from '../form/form.component';
 import {MatDividerModule} from '@angular/material/divider';
@@ -34,13 +33,10 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
   declarations: [
     FormBuilderComponent,
     CreateFormComponent,
-    MatInputWrapperComponent,
-    RadioWrapperComponent,
+    
     FormDirective,
     
-    SelectWrapperComponent,
-    CheckboxWrapperComponent,
-    DateWrapperComponent,
+   
     FormComponent,
     DashboardComponent
   ],
@@ -48,7 +44,8 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
     CommonModule,
     ReactiveFormsModule,
     MatModule,
-    FormBuilderRoutingModule
+    FormBuilderRoutingModule,
+    QuestionModule,
   ]
 })
 export class FormBuilderModule { }

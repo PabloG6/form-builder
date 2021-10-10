@@ -1,9 +1,11 @@
 <mat-toolbar></mat-toolbar>
 
-<mat-stepper class="stepper" labelPosition="bottom" #stepper>
-  <mat-step [stepControl]="questionsFormArray">
+
     <div class="question-container">
       <div class="question-content-container">
+        <mat-form-field>
+          <input matInput> 
+        </mat-form-field>
         <div #questionContainer></div>
       </div>
 
@@ -50,37 +52,5 @@
         </button>
       </div>
     </div>
-    <button mat-button matStepperNext>Next</button>
-  </mat-step>
-  <mat-step class="center">
-      <div class="mat-display-1">Form Information</div>
-    <form [formGroup]="formInfo" class="center">
-    
-      <mat-card class="question-card">
-          <div class="mat-subheading-2">Title. (Required)</div>
-          <mat-form-field appearance="fill" style="width: 100%">
-              <input matInput formControlName="title" placeholder="E.g. Student Form Registration 2021">
-          </mat-form-field>
-     </mat-card>
 
-     <mat-card class="question-card">
-        <div class="mat-subheading-2">Description. (Optional)</div>
-        <mat-form-field appearance="fill" style="width: 100%">
-            <textarea matInput formControlName="description"></textarea>
-        </mat-form-field>
-
-       
-   </mat-card>
-   <mat-card class="question-card">
-    <div class="mat-subheading-2">Web Hook Link. (Required)</div>
-    <mat-form-field appearance="fill" style="width: 100%">
-        <input matInput formControlName="webhook">
-    </mat-form-field>
-    </mat-card>
-    </form>
-    <div class="stepper-holder">
-      <button mat-stroked-button matStepperPrevious>Previous</button>
-      <button mat-flat-button matStepperNext color="primary" [disabled]="formInfo.invalid" (click)="onSubmit()">Done</button>
-    </div>
-  </mat-step>
-</mat-stepper>
+  

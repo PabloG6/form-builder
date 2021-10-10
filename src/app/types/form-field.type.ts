@@ -1,5 +1,5 @@
 import { TextFieldModule } from "@angular/cdk/text-field";
-import { MatFormFieldAppearance, MatFormFieldModule } from "@angular/material/form-field";
+import { MatFormFieldAppearance, MatFormFieldModule } from "@angular/material-experimental/mdc-form-field";
 
 export type TAppearance = 'fill' | 'outline' | 'legacy';
 export type QuestionType = 'radio' | 'select' | 'shortAnswer' | 'paragraph' | 'date' | 'number';

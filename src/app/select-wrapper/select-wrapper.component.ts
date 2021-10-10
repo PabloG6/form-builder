@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { MatFormFieldAppearance } from '@angular/material-experimental/mdc-form-field';
 import { TextFieldInit } from '../types/form-field.type';
 
 @Component({

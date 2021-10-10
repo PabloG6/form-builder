@@ -1,16 +1,22 @@
 
-<mat-toolbar></mat-toolbar>
+<mat-toolbar>
+    
+</mat-toolbar>
 
         
         <div class="display-grid">
-            <mat-card *ngFor="let form of ($formsArray | async)?.data" class="form-card">
-              <div class="form-title mat-subheading-2">
-                  {{form?.title}}
-              </div>
+            <mat-card *ngFor="let form of ($formsArray | async)?.data"  appearance="raised">
+                
+               <div class="title-card">
+                <div class="subheading-2">{{form?.title}}</div>
 
-              <mat-card-content>
-                  No responses
-              </mat-card-content>
+               </div>
+         
+              <mat-card-actions>
+                  <p class="mat-caption">No Responses</p>
+                  <div style="flex: 1 auto"></div>
+                  <button mat-icon-button class="more-button"> <mat-icon class="material-icons-outlined">more_vert</mat-icon></button>
+            </mat-card-actions>
             </mat-card>
         </div>
 

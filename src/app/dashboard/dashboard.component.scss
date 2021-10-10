@@ -128,7 +128,48 @@ mat-toolbar {
   column-gap: 12px;
   margin-top: 16px;
   row-gap: 8px;
-  
-  grid-template-columns: 200px 200px 200px;
+ 
+  grid-template-columns: 270px 270px 270px;
+  margin-top: 84px;
 
+}
+
+mat-card {
+  height: 270px;
+
+}
+
+
+mat-toolbar {
+  z-index: 2;
+  position: fixed;
+}
+.title-card {
+  padding: 20px 16px 10px;
+  text-transform: capitalize;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.17);
+  height: 70%;
+
+}
+
+.subheading-2 {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.mat-caption {
+  color:rgba(0, 0, 0, 0.6);
+  font-weight: 500;
+  
+}
+
+
+
+.more-button {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 0;
 }

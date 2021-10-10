@@ -6,11 +6,13 @@ import { LoginComponent } from '../login/login.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { MatModule } from '../mat/mat.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SettingsComponent } from '../settings/settings.component';
 
 @NgModule({
   declarations: [
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    SettingsComponent
   ],
   imports: [
     CommonModule,
