@@ -19,14 +19,35 @@
     flex-direction: column;
     align-items: center;
     margin-top: 128px;
+    margin-bottom: 128px;
   }
+
 }
 
 #landing-page-image {
-    background: url("/assets/landing-page-image.png");
-    width: 100%;
-    padding-top: 45%;
-    background-size: contain;
-    position: relative;
-    background-position: center top;
-    background-repeat: no-repeat;}
+  background: url("/assets/landing-page-image.png");
+  width: 100%;
+  padding-top: 45%;
+  background-size: contain;
+  position: relative;
+  background-position: center top;
+  margin-bottom: 48px;
+  background-repeat: no-repeat;
+}
+
+.card {
+  border-radius: 8px;
+  width: 100%;
+  max-width: 320px;
+  height: 100%;
+  padding: 10px 16px;
+  margin: 16px;
+  max-height: 202px;
+}
+
+.feature-container {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  row-gap: 32px;
+}

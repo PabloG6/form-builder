@@ -7,6 +7,18 @@ button {
     background-color: none;
     font-size: 1rem;
     appearance: none;
+    &.large {
+        padding: 14px 32px;
+    }
+    &.outlined {
+        border-radius: 8px;
+        border: 1px solid #3454D1;
+        background-color: transparent;
+        color: black;
+        &:active {
+            color: black;
+        }
+    }
     &.primary {
         background-color: #3454D1;
         color: white;
