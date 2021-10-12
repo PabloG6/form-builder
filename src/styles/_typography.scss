@@ -27,7 +27,20 @@ p {
 
 h4, .subheading {
     font-size: 1.5rem;
-    line-height: 1.2rem; font-family: 'Inter', sans-serif;
+    line-height: 1.2rem; 
+    font-family: 'Inter', sans-serif;
     font-weight: normal;
     margin: 0.8rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.3rem;
+}
+
+.body-2 {
+    font-size: 0.9rem;
+    font-family: Roboto, 'sans-serif';
+    
 }
