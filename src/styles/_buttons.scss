@@ -1,0 +1,40 @@
+button {
+    padding: 12px 24px;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: none;
+    font-weight: 500;
+    background-color: none;
+    font-size: 1rem;
+    appearance: none;
+    &.primary {
+        background-color: #3454D1;
+        color: white;
+        
+        
+    }
+
+    &.accent {
+        background-color: #F9F5E3;
+        &:active {
+            color: #000;
+        }
+        
+    }
+
+    &.link {
+        font-size: 1rem;
+        font-weight: 500;
+        border-radius: 0px;
+        padding: 8px;
+        cursor: pointer;
+        line-height: 18.75px;
+        
+        background-color: transparent;
+        &:active {
+            color: #000;
+        }
+    }
+    
+}
+

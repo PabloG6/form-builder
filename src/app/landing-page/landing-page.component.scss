@@ -1,0 +1,32 @@
+.flex {
+  display: flex;
+  flex: 1 1 auto;
+  flex-grow: 1;
+}
+
+.feature-row {
+  display: flex;
+  padding-left: 104px;
+}
+
+.button-container {
+  padding-right: 104px;
+}
+
+.call-to-action {
+  &--container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 128px;
+  }
+}
+
+#landing-page-image {
+    background: url("/assets/landing-page-image.png");
+    width: 100%;
+    padding-top: 45%;
+    background-size: contain;
+    position: relative;
+    background-position: center top;
+    background-repeat: no-repeat;}

@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { MatModule } from './mat/mat.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     AppRoutingModule,
     AuthModule,
     HttpClientModule,
-    
+   
     BrowserAnimationsModule
   ],
   providers: [],
