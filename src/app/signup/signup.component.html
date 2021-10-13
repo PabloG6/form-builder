@@ -1,23 +1,21 @@
-<mat-card>
-  <form [formGroup]="formGroup">
-    <h3 class="mat-display-1">This is a call to action.</h3>
-    <p class="mat-body-1">This is definitely meant to be a minor description</p>
+  <form [formGroup]="formGroup" class="center-form">
+    <h3 class="subheading-1">This is a call to action.</h3>
+    <p class="subheadnig-1">This is definitely meant to be a minor description</p>
     <div class="form-field">
-      <p>Email</p>
+      <label>Email</label>
       <mat-form-field appearance="outline">
         <input matInput placeholder="example@email.com"  formControlName='email'/>
       </mat-form-field>
     </div>
 
     <div class="form-field">
-      <p>Password</p>
+      <label>Password</label>
       <mat-form-field appearance="outline" >
         <input matInput type="password" formControlName='password' />
       </mat-form-field>
     </div>
   </form>
 
-  <button mat-flat-button color="primary" id="signup" (click)="signUp()">
-    Create your account
+  <button class="primary">
+    Sign Up
   </button>
-</mat-card>
