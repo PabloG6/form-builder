@@ -13,6 +13,7 @@ import { MatModule } from './mat/mat.module';
   declarations: [
     AppComponent,
     LandingPageComponent,
+
   
   ],
   imports: [

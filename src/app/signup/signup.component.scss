@@ -17,6 +17,10 @@ mat-form-field {
 
 }
 
+hfx-form-field {
+    margin-bottom: 8px;
+}
+
 #signup {
     max-width: 300px;
     width: 100%;
@@ -33,4 +37,23 @@ mat-form-field {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+<<<<<<< Updated upstream
+=======
+}
+
+.center-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.call-to--action {
+    width: 100%;
+    max-width: 206px;
+}
+
+.subheading-2 {
+    max-width: 377px;
+>>>>>>> Stashed changes
 }

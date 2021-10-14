@@ -7,6 +7,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { MatModule } from '../mat/mat.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SettingsComponent } from '../settings/settings.component';
+import { HfxModule } from '../hfx/hfx.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SettingsComponent } from '../settings/settings.component';
     CommonModule,
     AuthRoutingModule,
     ReactiveFormsModule,
+    HfxModule,
     MatModule,
   ]
 })

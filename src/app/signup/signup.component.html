@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <mat-card>
   <form [formGroup]="formGroup">
     <h3 class="mat-display-1">This is a call to action.</h3>
@@ -21,3 +22,26 @@
     Create your account
   </button>
 </mat-card>
+=======
+<form [formGroup]="formGroup" class="center-form">
+  <h3 class="subheading-1">Create your Hookform Account.</h3>
+  <p class="subheading-2">
+    Sign Up to Hookform to start collecting data via webhoooks.
+  </p>
+
+  <hfx-form-field label="Email">
+    <input
+      hfxInput
+      placeholder="johndoe@hookforms.com"
+      type="email"
+      formControlName="email"
+    />
+  </hfx-form-field>
+
+  <hfx-form-field label="Password">
+    <input hfxInput placeholder="random@password" type="password" formControlName="password"/>
+  </hfx-form-field>
+
+  <button class="primary call-to--action" (click)="signUp()">Sign Up</button>
+</form>
+>>>>>>> Stashed changes
