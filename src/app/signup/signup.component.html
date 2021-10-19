@@ -5,18 +5,25 @@
     Sign Up to Hookform to start collecting data via webhoooks.
   </p>
 
-  <hfx-form-field label="Email">
+  <div>
+  <label hfxLabel>Email</label>
+  <hfx-form-field>
     <input
       hfxInput
       placeholder="johndoe@hookforms.com"
       type="email"
       formControlName="email"
+     
     />
   </hfx-form-field>
+  </div>
 
+  <div>
+  <label hfxLabel>Password</label>
   <hfx-form-field label="Password">
     <input hfxInput placeholder="random@password" type="password" formControlName="password"/>
   </hfx-form-field>
+  </div>
 
   <button class="primary call-to--action" (click)="signUp()">Sign Up</button>
 </form>

@@ -1,15 +1,40 @@
-.form-field {
+.hfx-form-field {
     padding: 4px 8px;
     border: 1.2px solid #8D8D8D;
     min-width: 224px;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 4px;
 
     align-items: center;
     justify-content: center;
+
+    &__error {
+        border: 2px solid #D73340;
+        
+    }
+
+    &__focused  {
+        border: 2px solid #3454D1;
+        transform: none;
+
+    }
     
+}
+
+.hfx-form-label {
+    margin-bottom: 6px;
+    display: block;
+
+}
+
+
+
+
+.hfx-form-field {
+    &__icon {
+
+    }
 }
 
 

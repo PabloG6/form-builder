@@ -1,3 +1,4 @@
+import { NgControl } from '@angular/forms';
 import { HfxInputDirective } from './hfx-input.directive';
 
 describe('HfxInputDirective', () => {
