@@ -1,4 +1,4 @@
-import { Directive, ElementRef, forwardRef, HostBinding, HostListener, Optional, Self } from '@angular/core';
+import { ComponentFactoryResolver, Directive, ElementRef, forwardRef, HostBinding, HostListener, Optional, Self } from '@angular/core';
 import { NgControl } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
 import { FORM_FIELD_TOKEN, HfxFormFieldControl } from './hfx-form-field-control';
@@ -24,6 +24,10 @@ export class HfxInputDirective implements HfxFormFieldControl<any> {
   }
  
   get errorState(): boolean {
+    if(this.ngControl?.dirty) {
+      console.log("this control is dirty", this.ngControl?.dirty)
+    }
+
     return(this.ngControl?.control?.dirty && this.ngControl?.control.invalid) ?? false;
   }
 

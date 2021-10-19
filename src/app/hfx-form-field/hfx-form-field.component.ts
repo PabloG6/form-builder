@@ -14,8 +14,10 @@ export const FORM_CONTAINER = new InjectionToken<HfxFormFieldComponent>("FORM_CO
   host: {
     
     'class': 'hfx-form-field',
-    '[class.hfx-form-field__focused]': '_control.focused',
-    '[class.hfx-form-field__error]': '_control.errorState'
+    '[class.hfx-form-field--active]': '!_control.errorState && _control.focused',
+    '[class.hfx-form-field--invalid]': '_control.errorState',
+    '[class.hfx-form-field--focused]': '_control.focused',
+   
   },
   animations: [hfxFormFieldAnimations.transitionMessages],
   providers: [{provide: FORM_CONTAINER, useExisting: HfxFormFieldComponent}]
@@ -29,7 +31,7 @@ export class HfxFormFieldComponent implements OnInit, AfterViewInit, AfterConten
   
 
   get _control(): HfxFormFieldControl<any> {
-    console.log(this.formFieldControl.focused)
+    console.log('error-focused: ', this.formFieldControl.errorState && this.formFieldControl.focused)
     return this.formFieldControl
   }
   constructor() { }

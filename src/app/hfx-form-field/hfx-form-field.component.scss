@@ -9,18 +9,28 @@
     align-items: center;
     justify-content: center;
 
-    &__error {
-        border: 2px solid #D73340;
-        
+   
+
+    &--invalid {
+        border-color: #D73340;
     }
 
-    &__focused  {
-        border: 2px solid #3454D1;
-        transform: none;
+    &--focused {
+        border-width: 2px;
 
     }
+
+
+    &--active {
+        border-color: #3454D1;
+    }
+
     
 }
+
+
+
+
 
 .hfx-form-label {
     margin-bottom: 6px;
