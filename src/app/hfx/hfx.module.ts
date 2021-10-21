@@ -14,7 +14,7 @@ import { HfxFormFieldDirective } from '../hfx-form-field/hfx-form-field.directiv
   declarations: [
     HfxFormFieldComponent,
     HfxInputDirective,
-  
+    
     HfxHintComponent,
     HfxIconComponent,
     HfxLabelDirective,
@@ -26,6 +26,7 @@ import { HfxFormFieldDirective } from '../hfx-form-field/hfx-form-field.directiv
   ], 
   exports: [
     HfxFormFieldComponent,
+    HfxHintComponent,
     HfxInputDirective,
     HfxLabelDirective,
     HfxFormFieldDirective

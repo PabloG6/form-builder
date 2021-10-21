@@ -1,5 +1,9 @@
-<ng-content></ng-content>
-<div class="hfx-form-field__icon"></div>
-<ng-content select="hfx-error"></ng-content>
-<ng-content select="hfx-hint"></ng-content>
 
+<label hfxLabel>{{label}}</label>
+<div class="hfx-form-field-outline">
+    <ng-content></ng-content>
+</div>
+
+<div class="hfx-form-field__icon"></div>
+
+<ng-content select="hfx-hint"></ng-content>

@@ -26,12 +26,12 @@ export const FORM_CONTAINER = new InjectionToken<HfxFormFieldComponent>("FORM_CO
 export class HfxFormFieldComponent implements OnInit, AfterViewInit, AfterContentInit, AfterContentChecked {
   
 
+  @Input() label: string;
 
   @ContentChild(FORM_FIELD_TOKEN, {static: true}) formFieldControl: HfxFormFieldControl<any>;
   
 
   get _control(): HfxFormFieldControl<any> {
-    console.log('error-focused: ', this.formFieldControl.errorState && this.formFieldControl.focused)
     return this.formFieldControl
   }
   constructor() { }

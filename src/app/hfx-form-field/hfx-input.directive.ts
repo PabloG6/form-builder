@@ -28,7 +28,7 @@ export class HfxInputDirective implements HfxFormFieldControl<any> {
       console.log("this control is dirty", this.ngControl?.dirty)
     }
 
-    return(this.ngControl?.control?.dirty && this.ngControl?.control.invalid) ?? false;
+    return(this.ngControl?.control.invalid && (this.ngControl?.control.touched)) ?? false;
   }
 
 

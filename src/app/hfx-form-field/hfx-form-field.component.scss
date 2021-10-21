@@ -1,6 +1,14 @@
+.hfx-form-label {
+  margin-bottom: 6px;
+  display: block;
+}
+
 .hfx-form-field {
+  display: block;
+  margin: 4px 0 16px;
+  .hfx-form-field-outline {
     padding: 4px 8px;
-    border: 1.2px solid #8D8D8D;
+    border: 1.3px solid #8d8d8d;
     min-width: 224px;
     border-radius: 4px;
     display: flex;
@@ -8,43 +16,26 @@
 
     align-items: center;
     justify-content: center;
+  }
 
-   
-
-    &--invalid {
-        border-color: #D73340;
+  &--focused {
+    .hfx-form-field-outline {
+      border-width: 2px;
     }
+  }
 
-    &--focused {
-        border-width: 2px;
 
+  &--active {
+      .hfx-form-field-outline {
+          border-color: #3454D1;
+      }
+  }
+
+  &--invalid {
+    .hfx-form-field-outline {
+      border-color: #D73340;
     }
-
-
-    &--active {
-        border-color: #3454D1;
-    }
-
-    
-}
-
-
-
-
-
-.hfx-form-label {
-    margin-bottom: 6px;
-    display: block;
-
-}
-
-
-
-
-.hfx-form-field {
-    &__icon {
-
-    }
+  }
 }
 
 

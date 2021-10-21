@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-hfx-hint',
+  selector: 'hfx-hint',
   templateUrl: './hfx-hint.component.html',
   styleUrls: ['./hfx-hint.component.scss']
 })
