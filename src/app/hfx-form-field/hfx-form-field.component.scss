@@ -6,6 +6,7 @@
 .hfx-form-field {
   display: block;
   margin: 4px 0 16px;
+ padding-bottom: 12px;
   .hfx-form-field-outline {
     padding: 4px 8px;
     border: 1.3px solid #8d8d8d;
@@ -38,4 +39,17 @@
   }
 }
 
+.hfx-helper-subscript-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    position: relative
+}
 
+.hfx-helper-text-wrapper {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+
+}

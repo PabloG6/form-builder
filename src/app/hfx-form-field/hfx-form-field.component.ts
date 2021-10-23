@@ -1,4 +1,6 @@
-import { AfterContentChecked, AfterContentInit, AfterViewInit, ChangeDetectionStrategy, Component, ContentChild, Host, HostBinding, HostListener, InjectionToken, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild, Host, HostBinding, HostListener, InjectionToken, Input, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { scheduled, Subject } from 'rxjs';
+import { startWith, takeUntil } from 'rxjs/operators';
 import { hfxFormFieldAnimations } from './hfx-form-field-animations';
 import { FORM_FIELD_TOKEN, HfxFormFieldControl } from './hfx-form-field-control';
 import { HfxInputDirective } from './hfx-input.directive';
@@ -23,22 +25,26 @@ export const FORM_CONTAINER = new InjectionToken<HfxFormFieldComponent>("FORM_CO
   providers: [{provide: FORM_CONTAINER, useExisting: HfxFormFieldComponent}]
 
 })
-export class HfxFormFieldComponent implements OnInit, AfterViewInit, AfterContentInit, AfterContentChecked {
+export class HfxFormFieldComponent implements OnInit, AfterViewInit, AfterContentInit, AfterContentChecked, OnDestroy{
   
 
   @Input() label: string;
 
   @ContentChild(FORM_FIELD_TOKEN, {static: true}) formFieldControl: HfxFormFieldControl<any>;
-  
-
+   
+  private _destroyed: Subject<void> = new Subject<void>();
   get _control(): HfxFormFieldControl<any> {
     return this.formFieldControl
   }
-  constructor() { }
+  constructor(private _changeDetectorRef: ChangeDetectorRef) { }
+  
   ngAfterContentChecked(): void {
   }
   ngAfterContentInit(): void {
     console.log("hello world", this.formFieldControl);
+    this._control.stateChanges.pipe(startWith(), takeUntil(this._destroyed)).subscribe(() => {
+      this._changeDetectorRef.markForCheck();
+    })
   }
   ngAfterViewInit(): void {
   }
@@ -47,6 +53,10 @@ export class HfxFormFieldComponent implements OnInit, AfterViewInit, AfterConten
   ngOnInit(): void {
   }
 
+
+  ngOnDestroy(): void {
+    this._destroyed.next();
+  }
 
  
   

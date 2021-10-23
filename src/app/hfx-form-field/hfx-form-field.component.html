@@ -4,6 +4,19 @@
     <ng-content></ng-content>
 </div>
 
-<div class="hfx-form-field__icon"></div>
+<div class="hfx-helper-subscript-wrapper">
+    <div class="hfx-helper-text-wrapper">
+        <ng-template #hintBlock>
 
-<ng-content select="hfx-hint"></ng-content>
+            <ng-content select="hfx-hint" #hintBlock></ng-content>
+        </ng-template>
+
+        
+    <div *ngIf="_control.errorState; else hintBlock">
+        <ng-content select="hfx-error"></ng-content>
+
+    </div>
+    </div>
+    
+</div>
+
