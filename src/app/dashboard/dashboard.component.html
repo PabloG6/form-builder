@@ -1,0 +1,26 @@
+<div class="hfx-toolbar">
+    <div class="toolbar-row">
+        <nb-icon icon="settings-outline"></nb-icon>
+        <button class="accent">
+            Create Form
+        </button>
+
+        <div class="avatar-container">
+            P
+        </div>
+    </div>
+  
+</div>
+
+
+<div *ngIf="($formsArray | async)?.data?.length == 0; else formsBlock" class="subheading-1">
+
+        You don't have any forms yet.
+
+</div>
+<ng-template #formsBlock>
+    <div class="form-container" >
+        
+    
+    </div>
+</ng-template>
