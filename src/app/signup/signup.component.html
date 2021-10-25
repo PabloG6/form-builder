@@ -1,21 +1,38 @@
-  <form [formGroup]="formGroup" class="center-form">
-    <h3 class="subheading-1">This is a call to action.</h3>
-    <p class="subheadnig-1">This is definitely meant to be a minor description</p>
-    <div class="form-field">
-      <label>Email</label>
-      <mat-form-field appearance="outline">
-        <input matInput placeholder="example@email.com"  formControlName='email'/>
-      </mat-form-field>
-    </div>
 
-    <div class="form-field">
-      <label>Password</label>
-      <mat-form-field appearance="outline" >
-        <input matInput type="password" formControlName='password' />
-      </mat-form-field>
-    </div>
-  </form>
 
-  <button class="primary">
-    Sign Up
-  </button>
+<form [formGroup]="formGroup" class="center-form">
+  <h3 class="subheading-1">Create your Hookform Account.</h3>
+  <p class="subheading-2">
+    Sign Up to Hookform to start collecting data via webhoooks.
+  </p>
+
+
+  <hfx-form-field label="Email">
+    <input
+      hfxInput
+      placeholder="johndoe@hookforms.com"
+      type="email"
+      formControlName="email"
+     
+    />
+    <hfx-hint>Enter your email address.</hfx-hint>
+    <hfx-error>Incorrect email format.</hfx-error>
+
+  </hfx-form-field>
+
+
+
+  <hfx-form-field label="Password">
+    <input hfxInput placeholder="random@password" type="password" formControlName="password"/>
+    <hfx-hint>Enter your password.</hfx-hint>
+    <hfx-error>Should be 8 characters long</hfx-error>
+
+  </hfx-form-field>
+
+
+
+
+
+  <button class="primary call-to--action" (click)="signUp()">Sign Up</button>
+</form>
+

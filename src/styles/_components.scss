@@ -16,4 +16,46 @@
 .outlined {
     border: 1px solid black;
     
+
+
+}
+
+nb-icon {
+    height: 24px;
+    width: 24px;
+}
+.nb-icon-large {
+    width: 32px;
+    height: 32px
+}
+
+
+
+
+.hfx-input-element {
+    height: 24px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+
+}
+.hfx-input-element:focus {
+    border: none;
+    outline: none;
+
+}
+
+.hfx-input-element::placeholder {
+    font-size: 16px;
+    color: #C9C9C9;
+    font-weight: 400;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+
+.hfx-form-label {
+    margin-bottom: 6px;
+    display: block;
+    
 }

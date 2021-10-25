@@ -1,23 +1,26 @@
+<div class="hfx-toolbar">
+    <div class="toolbar-row">
+        <nb-icon icon="settings-outline"></nb-icon>
+        <button class="accent">
+            Create Form
+        </button>
 
-<mat-toolbar>
-    
-</mat-toolbar>
-
-        
-        <div class="display-grid">
-            <mat-card *ngFor="let form of ($formsArray | async)?.data"  appearance="raised">
-                
-               <div class="title-card">
-                <div class="subheading-2">{{form?.title}}</div>
-
-               </div>
-         
-              <mat-card-actions>
-                  <p class="mat-caption">No Responses</p>
-                  <div style="flex: 1 auto"></div>
-                  <button mat-icon-button class="more-button"> <mat-icon class="material-icons-outlined">more_vert</mat-icon></button>
-            </mat-card-actions>
-            </mat-card>
+        <div class="avatar-container">
+            P
         </div>
+    </div>
+  
+</div>
 
- 
+
+<div *ngIf="($formsArray | async)?.data?.length == 0; else formsBlock" class="subheading-1">
+
+        You don't have any forms yet.
+
+</div>
+<ng-template #formsBlock>
+    <div class="form-container" >
+        
+    
+    </div>
+</ng-template>

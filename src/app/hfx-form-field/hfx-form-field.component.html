@@ -1,0 +1,22 @@
+
+<label hfxLabel>{{label}}</label>
+<div class="hfx-form-field-outline">
+    <ng-content></ng-content>
+</div>
+
+<div class="hfx-helper-subscript-wrapper">
+    <div class="hfx-helper-text-wrapper">
+        <ng-template #hintBlock>
+
+            <ng-content select="hfx-hint" ></ng-content>
+        </ng-template>
+
+        
+    <div *ngIf="_control.errorState; else hintBlock">
+        <ng-content select="hfx-error"></ng-content>
+
+    </div>
+    </div>
+    
+</div>
+

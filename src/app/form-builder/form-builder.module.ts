@@ -26,6 +26,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { QuestionModule } from '../question/question.module';
 import { MatModule } from '../mat/mat.module';
 import { DashboardComponent } from '../dashboard/dashboard.component';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { NbIconModule, NbUserModule } from '@nebular/theme';
 
 
 
@@ -39,11 +41,15 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
    
     FormComponent,
     DashboardComponent
+    
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     MatModule,
+    NbUserModule,
+    NbIconModule,
+ 
     FormBuilderRoutingModule,
     QuestionModule,
   ]

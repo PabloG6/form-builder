@@ -8,17 +8,23 @@ import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MatModule } from './mat/mat.module';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { NbThemeModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
+
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AuthModule,
+    NbEvaIconsModule,
+    NbThemeModule.forRoot(),
+   
     HttpClientModule,
    
     BrowserAnimationsModule

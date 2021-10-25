@@ -8,6 +8,10 @@ mat-card {
     width: 100%;
 }
 
+hfx-form-field {
+    width: 100%;
+    max-width: 250px;
+}
 .form-field {
     width: 320px;
 }
@@ -16,6 +20,7 @@ mat-form-field {
     width: 100%;
 
 }
+
 
 #signup {
     max-width: 300px;
@@ -40,4 +45,13 @@ mat-form-field {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.call-to--action {
+    width: 100%;
+    max-width: 206px;
+}
+
+.subheading-2 {
+    max-width: 377px;
 }
