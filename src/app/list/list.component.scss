@@ -1,0 +1,14 @@
+:host {
+    display: flex;
+    align-items: center;
+    color: #979797;
+    cursor: pointer;
+    padding: 4px 16px;
+    transition: 0.4s;
+
+    &:hover {
+     
+        background-color: #F3F3F3;
+
+    }
+}

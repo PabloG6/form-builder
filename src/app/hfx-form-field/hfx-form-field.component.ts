@@ -41,7 +41,6 @@ export class HfxFormFieldComponent implements OnInit, AfterViewInit, AfterConten
   ngAfterContentChecked(): void {
   }
   ngAfterContentInit(): void {
-    console.log("hello world", this.formFieldControl);
     this._control.stateChanges.pipe(startWith(), takeUntil(this._destroyed)).subscribe(() => {
       this._changeDetectorRef.markForCheck();
     })

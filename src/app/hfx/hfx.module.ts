@@ -9,6 +9,10 @@ import { HfxLabelDirective } from '../hfx-form-field/hfx-label.directive';
 import { HfxFormFieldDirective } from '../hfx-form-field/hfx-form-field.directive';
 import { HfxErrorComponent } from '../hfx-error/hfx-error.component';
 import { ToolbarComponent } from '../toolbar/toolbar.component';
+import { HfxIconButtonComponent } from '../hfx-icon-button/hfx-icon-button.component';
+import { ListComponent } from '../list/list.component';
+import { HfxButtonComponent } from '../hfx-button/hfx-button.component';
+import { NbIconModule } from '@nebular/theme';
 
 
 
@@ -20,19 +24,27 @@ import { ToolbarComponent } from '../toolbar/toolbar.component';
     HfxHintComponent,
     HfxIconComponent,
     HfxLabelDirective,
+    ListComponent,
     
     HfxFormFieldDirective,
          HfxErrorComponent,
          ToolbarComponent,
+         HfxIconButtonComponent,
+         ListComponent,
+         HfxButtonComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NbIconModule,
   ], 
   exports: [
     HfxFormFieldComponent,
     HfxHintComponent,
     HfxErrorComponent,
+    HfxButtonComponent,
+    ListComponent,
     HfxInputDirective,
+    HfxIconButtonComponent,
     HfxLabelDirective,
     HfxFormFieldDirective
 

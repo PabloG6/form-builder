@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilderComponent } from './form-builder.component';
 import { FormBuilderRoutingModule } from './form-builder-routing.module';
-import { CreateFormComponent } from '../create-form/create-form.component';
 import { MatInputWrapperComponent } from '../mat-input-wrapper/mat-input-wrapper.component';
 import { RadioWrapperComponent } from '../radio-wrapper/radio-wrapper.component';
 import { SelectWrapperComponent } from '../select-wrapper/select-wrapper.component';
@@ -28,19 +27,21 @@ import { MatModule } from '../mat/mat.module';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbIconModule, NbUserModule } from '@nebular/theme';
+import { HfxModule } from '../hfx/hfx.module';
+import { FormListComponent } from '../form-list/form-list.component';
 
 
 
 @NgModule({
   declarations: [
     FormBuilderComponent,
-    CreateFormComponent,
     
     FormDirective,
     
    
     FormComponent,
-    DashboardComponent
+    DashboardComponent,
+    FormListComponent,
     
   ],
   imports: [
@@ -49,7 +50,7 @@ import { NbIconModule, NbUserModule } from '@nebular/theme';
     MatModule,
     NbUserModule,
     NbIconModule,
- 
+    HfxModule,
     FormBuilderRoutingModule,
     QuestionModule,
   ]

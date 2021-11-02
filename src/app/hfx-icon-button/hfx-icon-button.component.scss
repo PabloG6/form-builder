@@ -1,0 +1,21 @@
+.new-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+    & > .caption {
+      font-size: 0.6rem;
+      line-height: 1rem;
+  
+    
+    }
+  
+    & > nb-icon {
+      width: 20x;
+      height: 20px;
+    }
+}
+
+
+

@@ -29,6 +29,10 @@ export class SignupComponent implements OnInit {
     this._apiService.signup(this.formGroup.get('email').value, this.formGroup.get('password').value).subscribe(() => {
       console.log('hello world');
       this._router.navigate(['form', 'dashboard'])
+    }, (error) => {
+
+      //todo do something for the error here.
+      console.log(error);
     });
   }
 }

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreateFormComponent } from './create-form.component';
+import { HfxButtonComponent } from './hfx-button.component';
 
-describe('CreateFormComponent', () => {
-  let component: CreateFormComponent;
-  let fixture: ComponentFixture<CreateFormComponent>;
+describe('HfxButtonComponent', () => {
+  let component: HfxButtonComponent;
+  let fixture: ComponentFixture<HfxButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreateFormComponent ]
+      declarations: [ HfxButtonComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreateFormComponent);
+    fixture = TestBed.createComponent(HfxButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

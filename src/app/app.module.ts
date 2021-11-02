@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MatModule } from './mat/mat.module';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { NbThemeModule } from '@nebular/theme';
+import { NbLayoutModule, NbThemeModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [
@@ -23,6 +23,7 @@ import { NbThemeModule } from '@nebular/theme';
     AppRoutingModule,
     AuthModule,
     NbEvaIconsModule,
+    NbLayoutModule,
     NbThemeModule.forRoot(),
    
     HttpClientModule,

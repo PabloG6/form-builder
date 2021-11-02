@@ -24,10 +24,7 @@ export class HfxInputDirective implements HfxFormFieldControl<any> {
   }
  
   get errorState(): boolean {
-    if(this.ngControl?.dirty) {
-      console.log("this control is dirty: ", this.ngControl?.control.dirty)
-      console.log("is this control invalid: ", this.ngControl?.control.invalid)
-    }
+
 
     return(this.ngControl?.control.invalid && (this.ngControl?.control.touched)) ?? false;
   }

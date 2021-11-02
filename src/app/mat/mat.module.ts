@@ -18,6 +18,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatStepper, MatStepperModule} from '@angular/material/stepper';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [],
@@ -33,21 +34,24 @@ import {MatStepper, MatStepperModule} from '@angular/material/stepper';
     MatToolbarModule,
     MatStepperModule,
     MatIconModule,
-
+    MatDialogModule,
     MatButtonModule,
     MatTableModule,
     MatTooltipModule,
     MatSidenavModule,
     MatSelectModule,
     MatListModule,
+    MatSlideToggleModule,
     MatGridListModule,
     MatFormFieldModule,
   ],
    exports: [
     MatRadioModule,
+    MatSlideToggleModule,
     MatStepperModule,
     MatDatepickerModule,
     MatCardModule,
+    MatDialogModule,
     MatDividerModule,
     MatListModule,
     MatSlideToggleModule,

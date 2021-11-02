@@ -25,6 +25,16 @@ p {
 
 }
 
+.caption {
+    font-size: 0.75rem;
+    line-height: 2rem;
+    &.bold {
+        font-weight: 700;
+    }
+}
+
+
+
 h4, .subheading-1 {
     //styleName: Subheading 1;
 font-family: 'Inter', sans-serif;
