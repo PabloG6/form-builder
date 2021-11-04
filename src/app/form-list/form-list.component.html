@@ -25,7 +25,7 @@
     </ng-template>
     <div class="row">
         <button hfx-icon-button (click)="updateWebhookUrl()" [disabled]="webhookControl.invalid"><nb-icon icon="upload-outline"style="width: 16px; height: 16px"></nb-icon></button>
-        <button hfx-icon-button><nb-icon icon="clipboard-outline" style="width: 16px; height: 16px"></nb-icon></button>
+        <button hfx-icon-button (click)="copyWebhookUrl()"><nb-icon icon="clipboard-outline" style="width: 16px; height: 16px"></nb-icon></button>
     </div>
 </div>
 

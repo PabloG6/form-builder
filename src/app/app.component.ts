@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
 import { FormControl, NgControl } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { FormDirective } from './form.directive';
-import { MatInputWrapperComponent } from './mat-input-wrapper/mat-input-wrapper.component';
 import { TextFieldUnion } from './types/form-field.type';
 @Component({
   selector: 'app-root',

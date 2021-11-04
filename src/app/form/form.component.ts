@@ -52,6 +52,7 @@ export class FormComponent implements OnInit {
   ]
   constructor(private _apiService: ApiService, private _activatedRoute: ActivatedRoute) { 
     //do something about this
+    console.log("hello world");
     const id = this._activatedRoute.snapshot.paramMap.get('id')
     this._apiService.getForm('a6321f78-8f63-46f7-a53b-3d2aa066ae6b').subscribe((response) => {
       console.log(response);

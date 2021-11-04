@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Clipboard } from '@angular/cdk/clipboard';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ApiService } from '../api.service';
 
@@ -11,7 +13,7 @@ export class FormListComponent implements OnInit {
 
   @Input() form: any;
   webhookControl: FormControl = new FormControl();
-  constructor(private _api: ApiService) {
+  constructor(private _api: ApiService,  @Inject(DOCUMENT) private document: Document, private clipboard: Clipboard) {
    }
   
 
@@ -27,5 +29,9 @@ export class FormListComponent implements OnInit {
     }, (error) => {
       console.log(error);
     })
+  }
+
+  copyWebhookUrl() {
+    this.clipboard.copy(this.webhookControl.value);
   }
 }

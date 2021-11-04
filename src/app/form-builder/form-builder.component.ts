@@ -1,7 +1,6 @@
 import { AfterViewInit, Component, ComponentFactoryResolver, ComponentRef, OnInit, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AnonymousSubject } from 'rxjs/internal/Subject';
-import { AddQuestionComponent } from '../question/add-question/add-question.component';
 import { TextFieldUnion } from '../types/form-field.type';
 
 @Component({
@@ -59,8 +58,7 @@ export class FormBuilderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    const componentFactory = this._factoryResolver.resolveComponentFactory(AddQuestionComponent);
-     this.component = this._viewContainerRef.createComponent<AddQuestionComponent>(componentFactory);
+   
      
 
      
