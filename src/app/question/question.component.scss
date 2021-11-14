@@ -1,0 +1,33 @@
+.form-card {
+    max-width: 700px;
+    width: 100%;
+    margin: 16px;
+    padding: 8px 24px 12px 24px;
+}
+
+.input-card {
+    max-width: 700px;
+    width: 100%;
+    margin: 16px;
+    padding: 8px 24px 12px 24px;
+}
+mat-form-field {
+    max-width: 400px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.subtitle {margin-bottom: 16px;}

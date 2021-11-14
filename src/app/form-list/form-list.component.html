@@ -1,32 +1,37 @@
-<div class="row heading-container">
+<div>
+    <div class="row heading-container">
     
-    <div class="subheading-1">
-        {{form?.title}}
+        <div class="subheading-1">
+            {{form?.title}}
+        </div>
+        <div class="hfx-chip">
+            <span>
+                Drafts
+            </span>
+        </div>
+       
+    
+    
     </div>
-    <div class="hfx-chip">
-        <span>
-            Drafts
-        </span>
+    
+    
+    <div class="row subheading-container">
+    
+        <ng-container *ngIf="form?.url; else noUrl">
+            <div>{{form?.url}}</div>
+        </ng-container>
+    
+        <ng-template #noUrl>
+            <input class="input__outline--none " type="text" placeholder="Add a Webhook Url" [formControl]="webhookControl">
+        </ng-template>
+        <div class="row">
+            <button hfx-icon-button (click)="updateWebhookUrl()" [disabled]="webhookControl.invalid"><nb-icon icon="upload-outline"style="width: 16px; height: 16px"></nb-icon></button>
+            <button hfx-icon-button (click)="copyWebhookUrl()"><nb-icon icon="clipboard-outline" style="width: 16px; height: 16px"></nb-icon></button>
+            <button hfx-icon-button (click)="previewForm()"><nb-icon icon="eye-outline" width="width: 16px; height: 16px;"></nb-icon></button>
+        </div>
     </div>
-   
-
-
-</div>
-
-
-<div class="row subheading-container">
-
-    <ng-container *ngIf="form?.url; else noUrl">
-        <div>{{form?.url}}</div>
-    </ng-container>
-
-    <ng-template #noUrl>
-        <input class="input__outline--none " type="text" placeholder="Add a Webhook Url" [formControl]="webhookControl">
-    </ng-template>
-    <div class="row">
-        <button hfx-icon-button (click)="updateWebhookUrl()" [disabled]="webhookControl.invalid"><nb-icon icon="upload-outline"style="width: 16px; height: 16px"></nb-icon></button>
-        <button hfx-icon-button (click)="copyWebhookUrl()"><nb-icon icon="clipboard-outline" style="width: 16px; height: 16px"></nb-icon></button>
-    </div>
-</div>
-
+    
 <p>{{form?.description}}</p>
+</div>
+
+

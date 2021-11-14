@@ -16,7 +16,9 @@
      
     />
     <hfx-hint>Enter your email address.</hfx-hint>
-    <hfx-error>Incorrect email format.</hfx-error>
+    <hfx-error *ngIf="!emailControl?.errors">Incorrect email format.</hfx-error>
+    <hfx-error *ngIf="emailControl?.errors">{{emailControl?.errors?.message}}</hfx-error>
+
 
   </hfx-form-field>
 

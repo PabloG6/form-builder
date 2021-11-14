@@ -1,0 +1,32 @@
+
+<form [formGroup]="formGroup" class="form-container">
+    <div *ngFor="let question of questions" class="form-container">
+        <ng-container [ngSwitch]="question.question_type">
+            <mat-card *ngSwitchCase="'shortAnswer'" class="input-card">
+                <div class="subtitle">{{question.title}}</div>
+                <mat-form-field *ngSwitchCase="'shortAnswer'" appearance="fill">
+            
+                    <input matInput [id]="question.question_id" [placeholder]="question?.placeholder">
+                </mat-form-field>
+
+                </mat-card>
+                
+                <mat-card *ngSwitchCase="'CHECKBOX'" class="checkbox-container form-card">
+                    <div class="subtitle">{{question.title}}</div>
+
+                    <mat-checkbox *ngFor="let option of question.options" [formControlName]="question.question_id">
+                 
+                        {{option?.title}}
+                    </mat-checkbox>
+                </mat-card>
+        </ng-container>
+     
+
+        
+
+
+            
+
+    </div>
+  
+</form>

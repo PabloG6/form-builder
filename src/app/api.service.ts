@@ -4,6 +4,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { FormModel } from './models/form.model';
 const url = environment.apiUrl;
 @Injectable({
   providedIn: 'root',
@@ -59,8 +60,8 @@ export class ApiService {
   }
 
 
-  getForm(id: string) {
-    return this._httpClient.get(`${url}/forms/${id}`);
+  getForm(id: string): Observable<FormModel> {
+    return this._httpClient.get<FormModel>(`${url}/forms/${id}`, {headers: this.httpHeaders});
   }
 
   getFormList(): Observable<any> {

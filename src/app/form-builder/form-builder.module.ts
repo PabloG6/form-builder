@@ -14,6 +14,7 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 import { NbIconModule, NbUserModule } from '@nebular/theme';
 import { HfxModule } from '../hfx/hfx.module';
 import { FormListComponent } from '../form-list/form-list.component';
+import { QuestionComponent } from '../question/question.component';
 
 
 
@@ -22,7 +23,7 @@ import { FormListComponent } from '../form-list/form-list.component';
     FormBuilderComponent,
     
     FormDirective,
-    
+    QuestionComponent,
    
     FormComponent,
     DashboardComponent,

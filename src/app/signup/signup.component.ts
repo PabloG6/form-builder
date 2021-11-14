@@ -1,5 +1,6 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
@@ -24,15 +25,33 @@ export class SignupComponent implements OnInit {
   }
 
 
+  get emailControl(): FormControl {
+    
+    return this.formGroup.controls["email"] as FormControl;
+  }
+
   signUp() {
 
     this._apiService.signup(this.formGroup.get('email').value, this.formGroup.get('password').value).subscribe(() => {
       console.log('hello world');
       this._router.navigate(['form', 'dashboard'])
-    }, (error) => {
+    }, (response: HttpErrorResponse) => {
 
-      //todo do something for the error here.
-      console.log(error);
+    //get the first error returned in the form and place it here.
+      const errors = response.error.errors;
+      for (const key of Object.keys(errors)) {
+        const listErrors: string[] = errors[key];
+
+
+        //iterate over the error messages and display the first error message possible.
+        listErrors.forEach(message => {
+          this.emailControl.setErrors({message: message});
+          return;
+        });
+      
+    }
+
+
     });
   }
 }

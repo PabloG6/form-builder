@@ -1,6 +1,8 @@
-import { AfterContentChecked, AfterContentInit, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild, Host, HostBinding, HostListener, InjectionToken, Input, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild, ContentChildren, Host, HostBinding, HostListener, InjectionToken, Input, OnDestroy, OnInit, QueryList, ViewChild, ViewEncapsulation } from '@angular/core';
+
 import { scheduled, Subject } from 'rxjs';
-import { startWith, takeUntil } from 'rxjs/operators';
+import { startWith, take, takeUntil } from 'rxjs/operators';
+import { HfxErrorComponent, HFX_ERROR } from '../hfx-error/hfx-error.component';
 import { hfxFormFieldAnimations } from './hfx-form-field-animations';
 import { FORM_FIELD_TOKEN, HfxFormFieldControl } from './hfx-form-field-control';
 import { HfxInputDirective } from './hfx-input.directive';
@@ -13,6 +15,7 @@ export const FORM_CONTAINER = new InjectionToken<HfxFormFieldComponent>("FORM_CO
   styleUrls: ['./hfx-form-field.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
+
   host: {
     
     'class': 'hfx-form-field',
@@ -25,7 +28,7 @@ export const FORM_CONTAINER = new InjectionToken<HfxFormFieldComponent>("FORM_CO
   providers: [{provide: FORM_CONTAINER, useExisting: HfxFormFieldComponent}]
 
 })
-export class HfxFormFieldComponent implements OnInit, AfterViewInit, AfterContentInit, AfterContentChecked, OnDestroy{
+export class HfxFormFieldComponent implements OnInit, AfterViewInit, AfterContentInit, OnDestroy{
   
 
   @Input() label: string;
@@ -34,16 +37,26 @@ export class HfxFormFieldComponent implements OnInit, AfterViewInit, AfterConten
    
   private _destroyed: Subject<void> = new Subject<void>();
   get _control(): HfxFormFieldControl<any> {
+    
     return this.formFieldControl
   }
-  constructor(private _changeDetectorRef: ChangeDetectorRef) { }
+  constructor(private _changeDetectorRef: ChangeDetectorRef, ) { }
   
-  ngAfterContentChecked(): void {
-  }
+  @ContentChildren(HFX_ERROR, {descendants: true}) _errorChildren: QueryList<HfxErrorComponent>;
+
   ngAfterContentInit(): void {
-    this._control.stateChanges.pipe(startWith(), takeUntil(this._destroyed)).subscribe(() => {
+    this._control.stateChanges.pipe(startWith(), takeUntil(this._destroyed)).subscribe((state) => {
       this._changeDetectorRef.markForCheck();
     })
+
+
+    this._control.ngControl.statusChanges.pipe(takeUntil(this._destroyed)).subscribe(() => {
+      this._changeDetectorRef.markForCheck();
+    })
+    this._control.ngControl.valueChanges.pipe(takeUntil(this._destroyed)).subscribe(() => {
+      this._changeDetectorRef.markForCheck()
+    })
+
   }
   ngAfterViewInit(): void {
   }
@@ -52,6 +65,11 @@ export class HfxFormFieldComponent implements OnInit, AfterViewInit, AfterConten
   ngOnInit(): void {
   }
 
+  _getDisplayedMessages(): 'error' | 'hint' {
+    return this._errorChildren && this._errorChildren.length > 0 && this._control.errorState
+      ? 'error'
+      : 'hint';
+  }
 
   ngOnDestroy(): void {
     this._destroyed.next();

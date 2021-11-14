@@ -18,7 +18,7 @@ export class HfxInputDirective implements HfxFormFieldControl<any> {
   focused: boolean = false;
 
   stateChanges: Subject<void> = new Subject();
-  constructor( @Optional() @Self() private ngControl: NgControl, protected elementRef: ElementRef) { 
+  constructor( @Optional() @Self() public ngControl: NgControl, protected elementRef: ElementRef) { 
 
     
   }
@@ -33,7 +33,7 @@ export class HfxInputDirective implements HfxFormFieldControl<any> {
   @HostListener('focus', ['true'])
   @HostListener('blur', ['false'])
   _onFocus(isFocused: boolean) {
-    console.log('is focused: ', isFocused)
+  
     if(isFocused !== this.focused) {
       this.focused = isFocused;
       this.stateChanges.next();
